@@ -1,21 +1,29 @@
 package pro.sky;
 
 public class ServiceStation {
-    public void check(Car car, Bicycle bicycle, Truck truck) {
+
+    public void check(Car car) {
         if (car != null) {
             System.out.println("Обслуживаем " + car.getModelName());
             for (int i = 0; i < car.getWheelsCount(); i++) {
                 ServiceStation.updateTyre();
             }
             ServiceStation.checkEngine();
-        } else if (truck != null) {
+        }
+    }
+
+    public void check(Truck truck) {
+        if (truck != null) {
             System.out.println("Обслуживаем " + truck.getModelName());
             for (int i = 0; i < truck.getWheelsCount(); i++) {
                 ServiceStation.updateTyre();
             }
             ServiceStation.checkEngine();
             ServiceStation.checkTrailer();
-        } else if (bicycle != null) {
+        }
+    }
+    public void check(Bicycle bicycle) {
+        if (bicycle != null) {
             System.out.println("Обслуживаем " + bicycle.getModelName());
             for (int i = 0; i < bicycle.getWheelsCount(); i++) {
                 ServiceStation.updateTyre();
