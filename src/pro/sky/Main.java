@@ -12,6 +12,8 @@ public class Main {
         Bicycle bicycle = new Bicycle("bicycle1", 2, "bicycle");
         Bicycle bicycle2 = new Bicycle("bicycle2", 2, "bicycle");
 
+
+
         ServiceStation station = new ServiceStation();
         station.check(car, null, null);
         station.check(car2, null, null);
