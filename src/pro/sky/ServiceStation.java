@@ -1,45 +1,51 @@
 package pro.sky;
 
-public class ServiceStation {
+public class ServiceStation implements CheckVehicle {
 
-    public void check(Car car) {
-        if (car != null) {
-            System.out.println("Обслуживаем " + car.getModelName());
-            for (int i = 0; i < car.getWheelsCount(); i++) {
-                ServiceStation.updateTyre();
-            }
-            ServiceStation.checkEngine();
+    @Override
+    public void check(Bicycle[] bicycles) {
+        for (int i = 0; i < bicycles.length; i++) {
+            System.out.println("Обслуживаем " + bicycles[i].getModelName());
+            ServiceStation.updateTyre(bicycles[i].getWheelsCount());
         }
+
     }
 
-    public void check(Truck truck) {
-        if (truck != null) {
-            System.out.println("Обслуживаем " + truck.getModelName());
-            for (int i = 0; i < truck.getWheelsCount(); i++) {
-                ServiceStation.updateTyre();
-            }
+    @Override
+    public void check(Car[] cars) {
+        for (int i = 0; i < cars.length; i++) {
+            System.out.println("Обслуживаем " + cars[i].getModelName());
+            ServiceStation.updateTyre(cars[i].getWheelsCount());
+            ServiceStation.checkEngine();
+        }
+
+    }
+
+    @Override
+    public void check(Truck[] trucks) {
+        for (int i = 0; i < trucks.length; i++) {
+            System.out.println("Обслуживаем " + trucks[i].getModelName());
+            ServiceStation.updateTyre(trucks[i].getWheelsCount());
             ServiceStation.checkEngine();
             ServiceStation.checkTrailer();
         }
+
     }
-    public void check(Bicycle bicycle) {
-        if (bicycle != null) {
-            System.out.println("Обслуживаем " + bicycle.getModelName());
-            for (int i = 0; i < bicycle.getWheelsCount(); i++) {
-                ServiceStation.updateTyre();
-            }
+
+    private static void updateTyre(int wheelCount) {
+        for (int i = 0; i < wheelCount; i++) {
+            System.out.println("Меняем покрышку");
         }
     }
 
-    public static void updateTyre() {
-        System.out.println("Меняем покрышку");
-    }
-
-    public static void checkEngine() {
+    private static void checkEngine() {
         System.out.println("Проверяем двигатель");
     }
 
-    public static void checkTrailer() {
+    private static void checkTrailer() {
         System.out.println("Проверяем прицеп");
     }
 }
+
+
+

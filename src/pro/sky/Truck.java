@@ -2,7 +2,7 @@ package pro.sky;
 
 public class Truck extends Vehicle {
 
-    public Truck(String modelName,int wheelsCount) {
-        super (modelName, wheelsCount);
+    public Truck(String modelName, int wheelsCount) {
+        super(modelName, wheelsCount);
     }
 }

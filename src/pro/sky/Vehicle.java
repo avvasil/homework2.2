@@ -1,6 +1,6 @@
 package pro.sky;
 
-public class Vehicle {
+public abstract class Vehicle {
 
     private String modelName;
     private  int wheelsCount;
