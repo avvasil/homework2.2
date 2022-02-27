@@ -1,9 +1,10 @@
 package pro.sky;
 
-public class Bicycle extends Vehicle {
+public class Bicycle extends WheeledTransport {
 
     public Bicycle(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
     }
+
 
 }
